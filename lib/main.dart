@@ -61,30 +61,26 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final navBar = CupertinoNavigationBar(
+    const navBar = CupertinoNavigationBar(
       middle: Text('Expense App'),
     );
 
-    return Column(
-      children: [
-        CupertinoPageScaffold(
-          navigationBar: navBar,
-          child: SingleChildScrollView(
-            child: SizedBox(
-              height: mediaQuery.size.height -
-                  navBar.preferredSize.height -
-                  mediaQuery.padding.top,
-              child: TransactionList(_userTransaction, _deleteTransaction),
-            ),
-          ),
+    return Scaffold(
+      appBar: navBar,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: mediaQuery.size.height -
+              navBar.preferredSize.height -
+              mediaQuery.padding.top,
+          child: TransactionList(_userTransaction, _deleteTransaction),
         ),
-        Container(
-          margin: EdgeInsets.only(bottom: 70),
-          child: FloatingActionButton(
-            onPressed: () => _InputWindow(context),
-          ),
-        )
-      ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _InputWindow(context),
+        tooltip: 'Add Item',
+        child: const Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
