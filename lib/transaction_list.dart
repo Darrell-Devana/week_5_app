@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'transaction.dart';
 import 'package:intl/intl.dart';
 
@@ -18,7 +18,7 @@ class TransactionList extends StatelessWidget {
               children: [
                 Text(
                   'No transaction added yet',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: CupertinoTheme.of(context).textTheme.navTitleTextStyle,
                 ),
                 const SizedBox(
                   height: 20,
