@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -36,11 +35,9 @@ class _NewTransactionState extends State<NewTransaction> {
   }
 
   void _presentDatePicker() {
-    showDatePicker(
-            context: context,
-            initialDate: DateTime.now(),
-            firstDate: DateTime(2022),
-            lastDate: DateTime.now())
+    CupertinoDatePicker(onDateTimeChanged: (DateTime value) {  },
+
+    )
         .then(
       (pickedDate) {
         if (pickedDate == null) {
