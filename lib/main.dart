@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // ignore: non_constant_identifier_names
   void _InputWindow(BuildContext context) {
-    showModalBottomSheet(
+    showCupertinoModalPopup(
         context: context,
         builder: (_) {
           return NewTransaction(_addNewTransition);
